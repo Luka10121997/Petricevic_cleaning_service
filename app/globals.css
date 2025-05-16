@@ -1,26 +1,281 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  height: 100%;
+ 
+}
+
+.multiline {
+margin-bottom: 40px;
+margin-block-end: 40px;
+line-height: 35px;
+font-size: 25px;
+font-weight: 700;
+font-family: Mulish, sans-serif;
+text-align: start;
+text-size-adjust: 100%;
+}
+
+p {
+  display:inline;
+  margin-right:30px;
+}
+
+.imagePosition {
+  position: absolute;
+  top : 555px;
+}
+
+.imageShape {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
+  width: 715px;
+  height: 700px;
+}
+
+.imageExpectedResultsShape {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 0px;
+}
+
+.expectedResultsShape {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 0px;
+  background-color: rgb(255, 255, 255);
+  flex: 0 0 auto; 
+}
+
+.expectedResultsShape:hover {
+  background-color: rgb(0, 183, 255);
+}
+
+.background {
+  background-image: url(https://cleener-next.netlify.app/images/work/work.jpg);
+  color : rgb(76, 81, 101);
+}
+
+.profileImage {
+  border-radius: 20%;
+}
+
+.headingPosition {
+  position: absolute;
+  top : 650px;
+  left : 630px;
+}
+
+.section {
+  background-color: rgb(246, 250, 255);
+  border-bottom-right-radius : 40%;
+}
+
+.btn {
+  box-sizing: border-box;
+  color: rgb(76, 81, 101);
+  font-family: Mulish, sans-serif;
+}
+.btn-theme:hover {
+  background-color: rgb(253, 224, 35);
+  color: rgb(19, 40, 126);
+}
+
+.phoneButton:hover {
+  border-top-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 60px;
+  color : rgb(19, 40, 126);
+}
+
+.btn-theme {
+  background-clip: border-box;
+  background-color: rgb(253, 224, 35);
+  background-size: auto;
+  border-bottom-color : rgb(19, 40, 126);
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  border-top-right-radius: 60px;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  text-size-adjust: 100%;
+  padding-bottom: 20px;
+  padding-left: 70px;
+  padding-right: 45px;
+  padding-top: 10px;
+}
+
+.arrow {
+  border: solid black;
+  box-sizing: border-box;
+  border-width: 0 3px 3px 0;
+  background-origin: padding-box;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 15px;
+  width: 60;
+}
+
+.phoneIcon {
+  background-color: rgb(246, 250, 255);
+  background-size: auto;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  border-top-right-radius: 60px;
+  display: inline-block;
+  padding: 5px;
+  margin-left: 10px;
+  width: 50px;
+  height: 30px;
+}
+
+.phoneButton {
+  background-clip: border-box;
+  background-color: rgb(36, 129, 251);
+  background-size: auto;
+  border-bottom-color : rgb(255, 255, 255);
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  border-top-right-radius: 60px;
+  box-sizing: border-box;
+  color : rgb(255, 255, 255);
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-size-adjust: 100%;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 45px;
+  padding-top: 10px;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.aboutSection {
+  background-image: url(https://cleener-next.netlify.app/images/page-title.jpg);
+  background-size: cover;
+  background-clip: border-box;
+  box-sizing : border-box;
+  flex-direction : column;
+  font-weight : 400;
+  position: relative;
+  font-weight : 400;
+  font-size: 15px;
+  height : 400px;
+  width: auto;
+}
+
+.imagesFromSlides {
+  width: 700px;
+  height: 850px;
+}
+
+.imageSection {
+  width: 750px;
+  min-height: 850px;
+  position:relative;
+  background-color: rgb(255, 255, 255);
+}
+
+.icons {
+  width: 150px;
+  height: 150px;
+}
+
+.iconPosition {
+  padding-top: 40px;
+}
+
+.targets:hover {
+  background-color: rgb(253, 224, 35);
+}
+
+.targetsBackground {
+  background-image: url(https://cleener-next.netlify.app/images/work/work.jpg);
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;           /* Makes children align in a row by default */
+  flex-wrap: nowrap;              /* Ensures items stay on one line (optional) */
+  gap: 20px;
+  height: 700px;               /* Optional spacing between items */
+}
+.footerFlex-container {
+  display: flex;
+  gap: 100px;
+  padding-left: 250px;
+}
+
+.footerFlex-item {
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.cleanersSection {
+  background-image: url(https://www.cleansweepofamerica.com/wp-content/uploads/2024/04/personal-housekeeping-content-01.jpg);
+}
+
+.cleanerShape {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  box-sizing : border-box;
+  width: 300px;
+  height: 310px;
+}
+
+.staffBackground {
+  background-image: url(https://t4.ftcdn.net/jpg/07/12/30/25/360_F_712302517_lO6zmNr10bBzJ7xSliw9eSmy7uSonI4x.jpg);
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+}
+
+.copyright {
+  position: relative;
+  top: 45px;
+}
+
+.form_position {
+  position: relative;
+  bottom: 950px;
+}
+.section-padding {
+  padding-top: 10px;
+}
+
+.locationMap {
+height: 550px;
+width: 100%;
+}
+
+@layer utilities {  
+  .nav-link {
+    @apply text-zinc-500 hover:text-zinc-800 transition-colors
+  }
+
 }
