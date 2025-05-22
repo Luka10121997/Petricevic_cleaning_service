@@ -7,7 +7,8 @@ export default function Contact() {
     {
       icon: <FaMapMarkerAlt className="text-3xl text-blue-600" />,
       title: 'Address',
-      details: ['Suhač 6B , Sinj, Croatia'],
+      details: ['Suhač 6B , Sinj, Croatia'
+      ],
     },
     {
       icon: <FaEnvelope className="text-3xl text-blue-600" />,
@@ -22,7 +23,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white py-30">
+    <div className="flex items-center justify-center bg-white py-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl self-start pt-2">
         {cards.map((card, idx) => (
           <div
@@ -34,7 +35,7 @@ export default function Contact() {
                 {card.icon}
               </div>
             </div>
-            <h3 className="text-lg font-semibold text-blue-900 mb-2">{card.title}</h3>
+            <h3 className="text-lg font-semibold text-blue-900 mb-1">{card.title}</h3>
             {card.title === 'Call Now' ? (
               card.details.map((detail, i) => (
                 <p key={i} className="text-sm text-gray-700">
@@ -42,7 +43,7 @@ export default function Contact() {
                 </p>
               ))
             ) : (
-              <p className="text-sm text-gray-700">
+              <p className="text-sm text-gray-700  whitespace-pre-line">
                 <br />{card.details.join(' ')} <br />
               </p>
             )}

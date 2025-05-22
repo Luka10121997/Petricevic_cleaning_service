@@ -12,7 +12,7 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const NavBar = () => {
   return (
-    <nav className='border-b mb-5 border-spacing-10 px-5 py-3'>
+    <nav className='border-b mb-5 border-spacing-10 px-5 py-3' style={{ backgroundColor: '#f8f9fa' }}>
       <Container>
         <Flex align="center" gap="3" className='display: inline-flex space-x-4'>
           <Flex>

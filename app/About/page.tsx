@@ -5,6 +5,7 @@ import React from 'react'
 import Image from 'next/image'
 import menImage from '@/app/Images/men-cleaning.jpeg'
 import Team from '../Components/cleaners';
+import CertificateAndStuffPage from './certificateAndStuff';
 
 const AboutPage = () => {
   return (
@@ -43,19 +44,62 @@ const AboutPage = () => {
               </div>
               <div className='pt-2 flex flex-wrap'>
                 <p className='text-1xl font-Mulish'>
-                  We are cleaning service Petričević opened in 2024. We as young company are providing best
-                  cleaning experience with professional,modern machines and very kind staff.
-                  Our customers are very satisfied and they recommend us everywhere.
+                  Mi smo servis za čišćenje Petričević otvoren 2024. godine. Mi kao mlada tvrtka pružamo najbolje iskustvo čišćenja sa profesionalnim, modernim strojevima i vrlo ljubaznim osobljem. Naši klijenti su jako zadovoljni i svugdje nas preporučuju.
                 </p>
                 <p className='text-1xl font-medium italic pt-2'>
-                  Let&apos;s connect and make your home, car or apartment happy and clean place.
+                  Povežimo se i učinimo vaš dom, automobil ili stan sretnim i čistim mjestom.
                 </p>
               </div>
             </Flex>
           </Flex>
         </Container>
       </Section>
-      <Section>
+      <Section className="bg-blue-50 dark:bg-gray-800 py-20 px-6 section">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Vizija */}
+            <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-blue-600 text-3xl">🌟</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-white">
+                  Naša vizija
+                </h2>
+              </div>
+              <p className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed">
+                Naša vizija je postati vodeća usluga čišćenja u Splitsko-dalmatinskoj županiji, poznata po profesionalnosti,
+                povjerenju i izvanrednoj kvaliteti. Cilj nam je izgraditi dugoročne odnose s našim klijentima kroz pouzdanu i
+                kvalitetnu uslugu, korištenje ekološki prihvatljivih sredstava i kontinuirano usavršavanje naših vještina.
+              </p>
+            </div>
+
+            {/* Tajming i iskustvo */}
+            <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-blue-600 text-3xl">⏱️</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-white">
+                  Tajming i iskustvo
+                </h2>
+              </div>
+              <div className='pt-2 flex flex-wrap'>
+                <p className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed mb-4">
+                  Iako smo osnovani 2024. godine, naš tim ima višegodišnje iskustvo u industriji čišćenja.
+                  Ponosimo se brzim odzivom, fleksibilnošću i preciznošću.
+                </p>
+                <p className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed">
+                  Naš radni raspored je prilagodljiv — dostupni smo prema vašim potrebama, bilo radnim danima
+                  ili vikendom. Naš cilj je učiniti proces čišćenja potpuno bezbrižnim i efikasnim.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+      <Section style={{ borderTopRightRadius: '40%' }} className="bg-blue-50 dark:bg-gray-800 mt-1 py-10">
+        <Container>
+          <CertificateAndStuffPage />
+        </Container>
+      </Section>
+      <Section className="py-16 bg-blue-50 dark:bg-gray-800">
         <Container>
           <Flex>
             <Team />

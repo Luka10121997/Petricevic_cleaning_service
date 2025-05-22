@@ -260,10 +260,24 @@ p {
   top: 45px;
 }
 
-.form_position {
-  position: relative;
-  bottom: 950px;
+.form {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 8px;
 }
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: white;
+}
+
 .section-padding {
   padding-top: 10px;
 }

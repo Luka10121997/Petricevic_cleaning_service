@@ -27,13 +27,7 @@ const Footer = () => {
           </Flex>
           <Flex flexGrow='0' flexShrink='0' flexBasis='auto' className='footerFlex-item'>
             <h2 className="text-lg font-semibold mb-4 text-nowrap">Services</h2>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>Carpets</li>
-              <li>Sofa</li>
-              <li>Kitchen</li>
-              <li>Bathroom</li>
-              <li>Cars</li>
-            </ul>
+            <ServicesLinks />
           </Flex>
         </Flex>
       </Container>
@@ -67,6 +61,32 @@ const NavLinks = () => {
             className={classNames({
               "nav-link": true,
               '!text-zinc-1100': link.href === currentPath,
+            })} href={link.href}>{link.label}</Link></li>)}
+    </ul>
+  )
+}
+
+const ServicesLinks = () => {
+
+  const links = [
+    { label: 'Čišćenje stanova i kuća', href: '/Services/house-cleaning' },
+    { label: 'Dubinsko čišćenje namještaja i tepiha', href: '/Services/couch-cleaning' },
+    { label: 'Uredsko čišćenje', href: '/Services/office-cleaning' },
+    { label: 'Dubinsko čišćenje automobila', href: '/Services/car-cleaning' },
+    { label: 'Generalno čišćenje nakon renovacija', href: '/Services/renovation-cleaning' },
+    { label: 'Dezinfekcija prostora', href: '/Services/disinfection' }
+  ]
+
+  const currentPath = usePathname()
+  return (
+    <ul className="space-y-2 text-sm text-gray-300">
+      {links.map(link =>
+        <li key={link.href} className="whitespace-nowrap">
+          <Link
+            key={link.href}
+            className={classNames({
+              "nav-link": true,
+              '!text-zinc-1100 text-nowrap': link.href === currentPath,
             })} href={link.href}>{link.label}</Link></li>)}
     </ul>
   )

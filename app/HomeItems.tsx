@@ -8,7 +8,6 @@ import friendlyImage from '@/app/Images/medium-shot-people-cleaning-building_23-
 import Image from 'next/image';
 import Link from 'next/link';
 import ControlledPage from './Controlled/page';
-import IconsControlledPage from './Controlled/iconsPage';
 import IconRowAnimated from './Components/iconsAnimation'
 
 
@@ -39,18 +38,6 @@ const HomeItems = () => {
         <Flex className='imagePosition ml-260'>
           <Image src={homeImage} alt='homeImage' className='w-110 h-90 imageShape' />
         </Flex>
-      </Section>
-      <Section className='flex flex-col items-center justify-center'>
-        <Container>
-          <Flex>
-            <div className='mt-5 mb-4'>
-              <Text className='text-4xl font-bold pb-7' style={{ color: 'rgb(19, 40, 126)' }}>
-                Our targets !
-              </Text>
-            </div>
-            <IconsControlledPage />
-          </Flex>
-        </Container>
       </Section>
       <Section className='flex flex-col items-center justify-center background'>
         <Container>
@@ -90,7 +77,7 @@ const HomeItems = () => {
       <Section className='flex flex-col items-center justify-center'>
         <Container>
           <Flex direction='row' justify='between'>
-            <Flex>
+            <Flex className='mt-1'>
               <Text className='text-3xl font-bold' style={{ color: 'rgb(19, 40, 126)' }}>
                 What can we do for you?
               </Text>
@@ -102,6 +89,11 @@ const HomeItems = () => {
       <Section>
         <Container>
           <Flex direction='row'>
+            <div className='mt-5 mb-4 text-center'>
+              <Text className='text-4xl font-bold pb-7' style={{ color: 'rgb(19, 40, 126)' }}>
+                Our targets !
+              </Text>
+            </div>
             <IconRowAnimated />
           </Flex>
         </Container>

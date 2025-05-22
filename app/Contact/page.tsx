@@ -30,15 +30,24 @@ const ContactPage = () => {
           </Flex>
         </Container>
       </Section>
-      <Section style={{ height: '1500px' }}>
+      <Section className="contact-section bg-blue-100 dark:bg-gray-900 w-full px-4 py-4 relative z-10 overflow-hidden">
         <Container>
-          <Flex direction='row' gap='2'>
-            <Contact />
-            <div className='form_position'>
-              <Heading className='text-4xl font-bold text-center mb-7' style={{ color: 'rgb(19, 40, 126)' }}>Contact us via our official E-mail</Heading>
+          <div className="flex flex-col items-center gap-1">
+            {/* Kartice */}
+            <div className='mt-0'>
+              <Contact />
+            </div>
+            {/* Forma */}
+            <div className="mt-0 pl-12 pr-12 py-4 mb-4 w-full max-w-3xl top-0">
+              <Heading
+                className="text-4xl font-bold text-center mb-1"
+                style={{ color: 'rgb(19, 40, 126)' }}
+              >
+                Contact us via our official E-mail
+              </Heading>
               <ContactForm />
             </div>
-          </Flex>
+          </div>
         </Container>
       </Section>
       <Section>
