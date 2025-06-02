@@ -1,13 +1,23 @@
 'use client';
 import { Container, Flex, Section } from '@radix-ui/themes'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import menImage from '@/app/Images/men-cleaning.jpeg'
 import Team from '../Components/cleaners';
 import CertificateAndStuffPage from './certificateAndStuff';
 
 const AboutPage = () => {
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Section className='flex flex-col items-center justify-center h-screen aboutSection'>
@@ -34,19 +44,28 @@ const AboutPage = () => {
       </Section>
       <Section style={{ backgroundColor: "#eeeeee" }}>
         <Container>
-          <Flex direction='row' className='flex-container pt-10 w-600 h-1000'>
-            <div className='ml-250 pt-15'>
-              <Image src={menImage} alt='menImage' className='w-150 h-140 rounded-full' />
+          <Flex className="flex-container pt-10 flex-wrap items-center justify-center gap-8">
+            <div
+              className={`pt-4 transform transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+                }`}
+            >
+              <Image
+                src={menImage}
+                alt="menImage"
+                className="md:w-82 md:h-68 lg:w-[600px] lg:h-[570px] rounded-full"
+              />
             </div>
-            <Flex className='w-120 h-120'>
-              <div className='pt-14'>
-                <h1 className='text-3xl font-bold' style={{ color: 'rgb(19, 40, 126)' }}>The best cleaning service in city</h1>
+            <Flex className="flex flex-col max-w-xl">
+              <div className="pt-4">
+                <h1 className="text-3xl font-bold text-[rgb(19,40,126)]">
+                  The best cleaning service in city
+                </h1>
               </div>
-              <div className='pt-2 flex flex-wrap'>
-                <p className='text-1xl font-Mulish'>
+              <div className="pt-2 flex flex-wrap">
+                <p className="text-lg font-mulish">
                   Mi smo servis za čišćenje Petričević otvoren 2024. godine. Mi kao mlada tvrtka pružamo najbolje iskustvo čišćenja sa profesionalnim, modernim strojevima i vrlo ljubaznim osobljem. Naši klijenti su jako zadovoljni i svugdje nas preporučuju.
                 </p>
-                <p className='text-1xl font-medium italic pt-2'>
+                <p className="text-lg font-medium italic pt-2">
                   Povežimo se i učinimo vaš dom, automobil ili stan sretnim i čistim mjestom.
                 </p>
               </div>
@@ -101,7 +120,7 @@ const AboutPage = () => {
       </Section>
       <Section className="py-16 bg-blue-50 dark:bg-gray-800">
         <Container>
-          <Flex>
+          <Flex direction={{ md: 'column' }}>
             <Team />
           </Flex>
         </Container>

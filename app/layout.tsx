@@ -3,6 +3,7 @@ import "./globals.css";
 import { Container, Theme } from "@radix-ui/themes";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import ScrollToTop from "./Components/scrollToTop";
 
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
           <main className='p-4'>
             <Container>
               {children}
+              <ScrollToTop />
             </Container>
           </main>
         </Theme>

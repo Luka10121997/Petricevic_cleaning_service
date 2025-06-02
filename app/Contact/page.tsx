@@ -40,7 +40,7 @@ const ContactPage = () => {
             {/* Forma */}
             <div className="mt-0 pl-12 pr-12 py-4 mb-4 w-full max-w-3xl top-0">
               <Heading
-                className="text-4xl font-bold text-center mb-1"
+                className="text-4xl font-bold text-center mb-2"
                 style={{ color: 'rgb(19, 40, 126)' }}
               >
                 Contact us via our official E-mail

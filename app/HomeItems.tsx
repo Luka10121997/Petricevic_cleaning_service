@@ -1,76 +1,107 @@
 'use client'
 import { Container, Flex, Heading, Section, Text } from '@radix-ui/themes'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import homeImage from '@/app/Images/cleaning-service.jpeg'
 import girlImage from '@/app/Images/girlCleaner.jpg'
 import industrialCleanerImage from '@/app/Images/industrial-cleaning-service-floor-machine-260nw-2420639731.webp'
 import friendlyImage from '@/app/Images/medium-shot-people-cleaning-building_23-2150454517.avif'
 import Image from 'next/image';
 import Link from 'next/link';
-import ControlledPage from './Controlled/page';
 import IconRowAnimated from './Components/iconsAnimation'
+import GallerySwiper from './Components/galleryComponentSwiper'
+import Spinner from './Components/spinner'
+import { ArrowRight } from 'lucide-react';
 
 
 const HomeItems = () => {
+
+
+  const [images, setImages] = useState<string[]>([]);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100); // mala pauza za glatki efekt
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    fetch('/api/gallery/home')
+      .then(res => res.json())
+      .then(data => setImages(data))
+      .catch(err => console.error('Error fetching gallery images:', err));
+  }, []);
   return (
     <>
-      <Section className='flex flex-col items-center justify-center h-screen section'>
-        <Flex className='headingPosition' direction='column'>
-          <Flex>
-            <Heading className='text-6xl font-bold text-center space-y-2' style={{ color: 'rgb(19, 40, 126)' }}>Need Cleaning Service?</Heading>
-          </Flex>
-          <Flex className='mt-5'>
-            <Text className='text-2xl font-bold multiline' style={{ color: 'rgb(44, 49, 71)' }}>
-              <ul>
-                <li className='ml-7'> We are certified company.
-                  We provide best cleaning</li>
-                <li>services for you,your company, your home and vehicles.</li>
-              </ul>
-            </Text>
-          </Flex>
-          <Flex className='btn mt-12'>
-            <Link className='btn-theme' href='/About'>
+      <Section className="flex flex-col-reverse lg:flex-row items-center justify-between px-6 py-20 lg:py-28 gap-10 max-w-7xl mx-auto">
+        {/* Text Content */}
+        <div className="text-center lg:text-left max-w-xl">
+          <Heading className="text-4xl lg:text-6xl font-bold mb-6" style={{ color: 'rgb(19, 40, 126)' }}>
+            Need Cleaning Service?
+          </Heading>
+          <Text className="text-lg lg:text-1xl font-bold" style={{ color: 'rgb(44, 49, 71)' }}>
+            <ul className="text-left">
+              <li>We are certified company Petričević. We provide best cleaning</li>
+              <li>services for you, your company, your home and vehicles.</li>
+            </ul>
+          </Text>
+          <div className="mt-8">
+            <Link href="/About" className="btn-theme flex items-center gap-2 justify-center">
+              <ArrowRight size={20} />
               What we offer
-              <i className='arrow right'></i>
             </Link>
-          </Flex>
-        </Flex>
-        <Flex className='imagePosition ml-260'>
-          <Image src={homeImage} alt='homeImage' className='w-110 h-90 imageShape' />
-        </Flex>
+          </div>
+        </div>
+        {/* Image */}
+        <div
+          className={`w-full max-w-md lg:max-w-lg xl:max-w-xl flex justify-center transition-opacity duration-1000 
+            ${isVisible ? 'opacity-100' : 'opacity-0'
+            }`}
+        >
+          <Image
+            src={homeImage}
+            alt="home cleaner"
+            className="object-cover w-full h-auto shadow-xl imageShape py-2"
+          />
+        </div>
       </Section>
       <Section className='flex flex-col items-center justify-center background'>
         <Container>
-          <div className='mb-10'>
-            <Text className='text-4xl font-bold' style={{ color: 'rgb(19, 40, 126)' }}>
-              What can you expect from us ?
+          <div className="mb-10 text-center">
+            <Text
+              className="text-1xl md:text-4xl font-bold"
+              style={{ color: 'rgb(19, 40, 126)' }}
+            >
+              What can you expect from us?
             </Text>
           </div>
+
           <Flex className='flex-container pt-10'>
-            <Flex className='w-100 h-100 expectedResultsShape'>
+            <div className='w-100 h-100 expectedResultsShape'>
               <div className='ml-30 pt-15'>
                 <Image src={girlImage} alt='girlImage' className='w-50 h-50 imageExpectedResultsShape'></Image>
               </div>
               <div className='ml-30'>
                 <h2 className='text-2xl font-bold' style={{ color: 'rgb(19, 40, 126)' }}>Easy connecting</h2>
               </div>
-            </Flex>
-            <Flex className='w-100 h-100 expectedResultsShape'>
+            </div>
+            <div className='w-100 h-100 expectedResultsShape'>
               <div className='ml-30 pt-15'>
                 <Image src={industrialCleanerImage} alt='industrialCleanerImage' className='w-50 h-50 imageExpectedResultsShape'></Image>
               </div>
               <div className='ml-30'>
                 <h2 className='text-2xl font-bold' style={{ color: 'rgb(19, 40, 126)' }}>Get clean and fresh</h2>
               </div>
-            </Flex>
-            <Flex className='w-100 h-100 expectedResultsShape'>
+            </div>
+            <div className='w-100 h-100 expectedResultsShape'>
               <div className='ml-30 pt-15'>
                 <Image src={friendlyImage} alt='friendlyImage' className='w-50 h-50 imageExpectedResultsShape'></Image>
               </div>
               <div className='ml-30'>
                 <h2 className='text-2xl font-bold' style={{ color: 'rgb(19, 40, 126)' }}>Pleasant and friendly staff</h2>
               </div>
-            </Flex>
+            </div>
           </Flex>
         </Container>
       </Section>
@@ -82,7 +113,13 @@ const HomeItems = () => {
                 What can we do for you?
               </Text>
             </Flex>
-            <ControlledPage />
+            {images.length > 0 ? (
+              <div className="w-[90%] max-w-5xl mt-2">
+                <GallerySwiper images={images} />
+              </div>
+            ) : (
+              <Spinner />
+            )}
           </Flex>
         </Container>
       </Section >

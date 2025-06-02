@@ -3,6 +3,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelope, FaPhone } from "react-icons/fa6";
 
 export default function Contact() {
+
   const cards = [
     {
       icon: <FaMapMarkerAlt className="text-3xl text-blue-600" />,
@@ -23,7 +24,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="flex items-center justify-center bg-white py-10">
+    <div className="flex items-center justify-center bg-white py-10" style={{ backgroundColor: '#f9f9f9' }}>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl self-start pt-2">
         {cards.map((card, idx) => (
           <div

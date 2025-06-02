@@ -1,11 +1,11 @@
-// app/data/servicesData.ts
-
 export interface ServiceData {
   id: number;
   slug: string;
   title: string;
   description: string;
   link: string;
+  features?: string[];
+  price?: string;
 }
 
 export const services: ServiceData[] = [
@@ -15,6 +15,14 @@ export const services: ServiceData[] = [
     title: "Čišćenje stanova i kuća",
     description: "Redovno ili dubinsko čišćenje svih prostorija vašeg doma.",
     link: "/Services/house-cleaning",
+    features: [
+      "Čišćenje podova i površina",
+      "Čišćenje kuhinjskih aparata, pećnica i ostalih elemenata",
+      "Dezinficiranje kuhinjskih površina",
+      "Pranje kupaonice i WC-a",
+      "Čišćenje prozora i staklenih površina"
+    ],
+    price: "50"
   },
   {
     id: 2,
@@ -22,6 +30,16 @@ export const services: ServiceData[] = [
     title: "Dubinsko čišćenje namještaja i tepiha",
     description: "Uklanjanje mrlja, alergena i neugodnih mirisa profesionalnim strojevima.",
     link: "/Services/couch-cleaning",
+    features: [
+      "Čišćenje garnitura, fotelja, stolica, madraca i kreveta.",
+      "Uklanjanje duboko usađene prljavštine, prašine, dlaka i pijeska.",
+      "Koristimo profesionalne strojeve koji ispiru i usisavaju sredstvo s vodom.",
+      "Brže sušenje i bolja učinkovitost od klasičnih metoda.",
+      "Uklanjanje mrlja, mirisa i bakterija.",
+      "Sušenje u roku nekoliko sati zahvaljujući snažnim usisivačima i ventilaciji.",
+      "Tapecirani elementi izgledaju kao novi."
+    ],
+    price: "100"
   },
   {
     id: 3,
@@ -36,6 +54,22 @@ export const services: ServiceData[] = [
     title: "Čišćenje automobila",
     description: "Detaljno pranje unutrašnjosti vašeg vozila s parnim čistačima.",
     link: "/Services/car-cleaning",
+    features: [
+      "Usisavanje sjedala, podova i prtljažnika",
+      "Dubinsko čišćenje tapeciranih površina",
+      "Pranje i dezinfekcija plastičnih i kožnih elemenata",
+      "Čišćenje i tretiranje ventilacijskog sustava",
+      "Uklanjanje neugodnih mirisa i bakterija",
+      "Parno čišćenje teško dostupnih mjesta",
+      "Antibakterijsko tretiranje volana, ručki i komandi",
+      "Pranje i poliranje staklenih površina iznutra",
+      "Vanjsko pranje karoserije bez ogrebotina",
+      "Čišćenje felgi i blatobrana",
+      "Nanošenje zaštitnog sloja za lak i plastiku",
+      "Poliranje svjetala i retrovizora",
+      "Brzo sušenje interijera snažnim ventilatorima"
+    ],
+    price: "100"
   },
   {
     id: 5,
