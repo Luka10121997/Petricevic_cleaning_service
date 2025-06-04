@@ -35,8 +35,8 @@ const NavBar = () => {
               <MobileIcon className='phoneIcon' color='rgb(19, 40, 126)' />
               +385 95 721 0020
             </Link>
-            <Link href='https://www.instagram.com/obrt_za_ciscenje_petricevic?igsh=d2FqeGdtdDQwbThp'><FaInstagram size={25} /></Link>
-            <Link href='https://www.facebook.com/profile.php?id=61568585374191'><FaFacebook size={25} /></Link>
+            <Link href='https://www.instagram.com/obrt_za_ciscenje_petricevic?igsh=d2FqeGdtdDQwbThp'><FaInstagram className='hover:text-pink-400 transition-colors duration-300' size={25} /></Link>
+            <Link href='https://www.facebook.com/profile.php?id=61568585374191'><FaFacebook className='hover:text-blue-400 transition-colors duration-300' size={25} /></Link>
           </div>
 
           {/* Mobile Hamburger */}

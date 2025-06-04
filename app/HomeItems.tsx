@@ -117,9 +117,9 @@ const HomeItems = () => {
               <div className="w-[90%] max-w-5xl mt-2">
                 <GallerySwiper images={images} />
               </div>
-            ) : (
-              <Spinner />
-            )}
+            ) :
+              <Spinner label='Images loading...' />
+            }
           </Flex>
         </Container>
       </Section >

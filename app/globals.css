@@ -35,6 +35,12 @@ p {
   margin-right:30px;
 }
 
+.centered-paragraph {
+  display: block !important;
+  margin-right: 0 !important;
+  text-align: center !important;
+}
+
 .imagePosition {
   position: absolute;
   top : 555px;

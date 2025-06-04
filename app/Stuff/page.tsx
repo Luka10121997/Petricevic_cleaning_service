@@ -1,5 +1,6 @@
-import { Section, Container, Heading, Text } from "@radix-ui/themes";
+import { Section, Container, Heading, Text, Flex } from "@radix-ui/themes";
 import MachinesCard from "../Components/machinesCard";
+import Link from "next/link";
 
 const machines = [
   {
@@ -26,20 +27,44 @@ const machines = [
 
 export default function StuffPage() {
   return (
-    <Section className="py-10 pt-22" style={{ backgroundColor: "#f0f4f8" }}>
-      <Container>
-        <div className="text-center mb-10">
-          <Heading className="text-4xl font-bold text-blue-900">Our Cleaning Equipment</Heading>
-          <Text className="text-lg text-gray-600 mt-2">
-            We use professional-grade machines to ensure your spaces are spotless.
-          </Text>
-        </div>
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {machines.map((machine, index) => (
-            <MachinesCard key={index} {...machine} />
-          ))}
-        </div>
-      </Container>
-    </Section>
+    <>
+      <Section className='flex flex-col items-center justify-center h-screen aboutSection'>
+        <Container>
+          <Flex className='row'>
+            <Flex className='col col-xs-12'>
+              <div className='text-center'>
+                <h2 className='font-bold text-6xl text-center'>
+                  Our stuff
+                </h2>
+                <ol>
+                  <li className='display: inline-block'>
+                    <Link href='/' className='font-bold'>Home</Link>
+                    <span>/</span>
+                  </li>
+                  <li className='display: inline-block'>
+                    <span className='font-bold'>Stuff</span>
+                  </li>
+                </ol>
+              </div>
+            </Flex>
+          </Flex>
+        </Container>
+      </Section>
+      <Section className="py-10 pt-22" style={{ backgroundColor: "#f2f2f2" }}>
+        <Container>
+          <div className="text-center mb-10">
+            <Heading className="text-4xl font-bold text-blue-900">Our Cleaning Equipment</Heading>
+            <Text className="text-lg text-gray-600 mt-2">
+              We use professional-grade machines to ensure your spaces are spotless.
+            </Text>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10">
+            {machines.map((machine, index) => (
+              <MachinesCard key={index} {...machine} />
+            ))}
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 }
