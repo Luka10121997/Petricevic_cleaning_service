@@ -4,6 +4,7 @@ import { Container, Theme } from "@radix-ui/themes";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import ScrollToTop from "./Components/scrollToTop";
+import { ToastContainer } from "react-toastify";
 
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
             <Container>
               {children}
               <ScrollToTop />
+              <ToastContainer />
             </Container>
           </main>
         </Theme>

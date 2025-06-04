@@ -1,7 +1,19 @@
-import { z } from 'zod'
+import { z } from 'zod';
 
 export const formSchema = z.object({
-  name: z.string().min(1, 'Name is required').max(255, 'Title must contain at most 255 character(s)'),
-  email: z.string().min(1, 'Email is required').max(100, 'Description must contain at most 100 character(s)'),
-  message: z.string().min(1, 'Message is required').max(65535, 'Name must contain at most 65535 character(s)')
+  name: z
+    .string({ required_error: 'Name is required' })
+    .min(1, 'Name is required')
+    .max(255, 'Name must be at most 255 characters'),
+  email: z
+    .string({ required_error: 'Email is required' })
+    .min(1, 'Email is required')
+    .email('Invalid email format')
+    .max(100, 'Email must be at most 100 characters'),
+  message: z
+    .string({ required_error: 'Message is required' })
+    .min(1, 'Message is required')
+    .max(65535, 'Message must be at most 65535 characters')
 });
+
+export type FormSchemaType = z.infer<typeof formSchema>;

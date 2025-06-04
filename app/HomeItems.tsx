@@ -108,7 +108,7 @@ const HomeItems = () => {
       <Section className='flex flex-col items-center justify-center'>
         <Container>
           <Flex direction='row' justify='between'>
-            <Flex className='mt-1'>
+            <Flex className='mt-1 text-center'>
               <Text className='text-3xl font-bold' style={{ color: 'rgb(19, 40, 126)' }}>
                 What can we do for you?
               </Text>

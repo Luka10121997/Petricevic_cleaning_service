@@ -1,88 +1,97 @@
 'use client';
-import { useState } from 'react';
-import { sendEmail } from '../api/route'
+
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { formSchema, FormSchemaType } from '../validationSchema';
+import { sendEmail } from '../api/route';
 import WorkingHours from './workingHours';
+import ErrorMessage from './errorMessage';
+import Spinner from './spinner';
+import { useState } from 'react';
+import { ToastNotifier } from './toastMessage';
 
 export default function ContactForm() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm<FormSchemaType>({
+    resolver: zodResolver(formSchema),
+    criteriaMode: 'all' // Prikazuje sve greške (ne samo required)
+  });
+  const [isSubmitting, setSubmitting] = useState(false)
 
+  const onSubmit = async (data: FormSchemaType) => {
+    setSubmitting(true)
+    const result = await sendEmail({
+      name: data.name,
+      email: data.email,
+      message: data.message
+    });
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = async (formData: FormData) => {
-    const result = await sendEmail(formData);
     if (result.success) {
-      alert(result.message);
-    } else {
-      alert(result.message);
+      reset();
+      ToastNotifier.success()
+      setSubmitting(false)
     }
   };
 
   return (
     <>
       <form
-        action={handleSubmit}
-        className="max-w-md mx-auto p-6 space-y-6 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg form"
+        onSubmit={handleSubmit(onSubmit)}
+        className="max-w-md mx-auto p-6 space-y-6 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg"
       >
-        {/** NAME FIELD */}
-        <div className="relative">
+        {/* NAME */}
+        <div>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
+            {...register('name')}
             placeholder="Name"
-            className="peer w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+          {errors.name && (
+            <ErrorMessage>{errors.name.message}</ErrorMessage>
+          )}
         </div>
 
-        {/** EMAIL FIELD */}
-        <div className="relative">
+        {/* EMAIL */}
+        <div>
           <input
             type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="Email"
-            className="peer w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            {...register('email')}
+            placeholder="Your Email"
+            className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+          {errors.email && (
+            <ErrorMessage>{errors.email.message}</ErrorMessage>
+          )}
         </div>
 
-
-        {/** MESSAGE FIELD */}
-        <div className="relative">
+        {/* MESSAGE */}
+        <div>
           <textarea
-            id="message"
-            name="message"
+            {...register('message')}
             rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            required
             placeholder="Message"
-            className="peer w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></textarea>
+          {errors.message && (
+            <ErrorMessage>{errors.message.message}</ErrorMessage>
+          )}
         </div>
 
-        {/** SUBMIT BUTTON */}
+        {/* SUBMIT */}
         <button
           type="submit"
+          disabled={isSubmitting}
           className="w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 active:scale-95 transition transform"
         >
-          Submit
+          {isSubmitting ? <Spinner label='Sending...' /> : 'Submit'}
         </button>
       </form>
       <WorkingHours />
     </>
-  )
+  );
 }

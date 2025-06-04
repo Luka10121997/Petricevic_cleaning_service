@@ -15,7 +15,7 @@ const MachinesCard = ({ title, description, image }: MachinesCardProps) => {
         alt={title}
         width={400}
         height={300}
-        className="w-full h-170 object-cover"
+        className="w-full h-170 object-cover fade-in"
       />
       <div className='p-5'>
         <h3 className="text-xl font-semibold text-blue-900">{title}</h3>

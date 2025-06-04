@@ -23,7 +23,7 @@ export default function Team() {
       <p className="text-white/70 mb-10 max-w-xl mx-auto">
         It was popularised in the with the release desktop publishing software like versions.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mt-35 pl-90 mb-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto mt-10 px-4 mb-20">
         {cleaners.map((cleaner, idx) => (
           <CleanerCard key={idx} {...cleaner} />
         ))}

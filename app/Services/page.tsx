@@ -25,7 +25,7 @@ const ServicesPage = () => {
       </Section>
 
       {/* Zašto mi */}
-      <Section className="bg-blue-100 py-16">
+      <Section className="bg-blue-100 py-16 fade-in">
         <Container>
           <h2 className="text-3xl font-bold text-center text-blue-900 mb-10">Zašto izabrati nas?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center">
@@ -50,7 +50,7 @@ const ServicesPage = () => {
       </Section>
 
       {/* CTA */}
-      <Section className="bg-blue-400 py-16 text-white text-center">
+      <Section className="bg-blue-400 py-16 text-white text-center fade-in">
         <h2 className="text-3xl font-bold mb-4">Spremni za čisti prostor?</h2>
         <div className="flex flex-col items-center md:block">
           <p className="mb-6 text-lg">Kontaktirajte nas već danas i rezervirajte termin za čišćenje.</p>

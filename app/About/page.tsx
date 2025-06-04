@@ -120,7 +120,7 @@ const AboutPage = () => {
       </Section>
       <Section className="py-16 bg-blue-50 dark:bg-gray-800">
         <Container>
-          <Flex direction={{ md: 'column' }}>
+          <Flex direction={{ md: 'column' }} align={{ md: 'center' }}>
             <Team />
           </Flex>
         </Container>
