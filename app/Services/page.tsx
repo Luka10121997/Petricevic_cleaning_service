@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
-import { Container, Section } from '@radix-ui/themes';
+import { Container, Flex, Section } from '@radix-ui/themes';
 import Link from 'next/link';
 import { ServicesIconSlider } from '../Components/servicesSlider';
 
@@ -11,6 +11,28 @@ import { ServicesIconSlider } from '../Components/servicesSlider';
 const ServicesPage = () => {
   return (
     <>
+      <Section className='flex flex-col items-center justify-center h-screen aboutSection'>
+        <Container>
+          <Flex className='row'>
+            <Flex className='col col-xs-12'>
+              <div className='text-center'>
+                <h2 className='font-bold text-6xl text-center'>
+                  Our services
+                </h2>
+                <ol>
+                  <li className='display: inline-block'>
+                    <Link href='/' className='font-bold'>Home</Link>
+                    <span>/</span>
+                  </li>
+                  <li className='display: inline-block'>
+                    <span className='font-bold'>Services</span>
+                  </li>
+                </ol>
+              </div>
+            </Flex>
+          </Flex>
+        </Container>
+      </Section>
       {/* Hero sekcija */}
       <Section className="bg-blue-50 py-20 text-center pt-30">
         <h1 className="text-4xl font-bold text-blue-900">Naše usluge čišćenja</h1>

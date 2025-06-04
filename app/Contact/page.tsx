@@ -12,7 +12,7 @@ const ContactPage = () => {
         <Container>
           <Flex className='row'>
             <Flex className='col col-xs-12'>
-              <div>
+              <div className='text-center'>
                 <h2 className='font-bold text-6xl text-center'>
                   Contact us
                 </h2>

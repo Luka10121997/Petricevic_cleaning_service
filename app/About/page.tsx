@@ -24,7 +24,7 @@ const AboutPage = () => {
         <Container>
           <Flex className='row'>
             <Flex className='col col-xs-12'>
-              <div>
+              <div className='text-center'>
                 <h2 className='font-bold text-6xl text-center'>
                   About us
                 </h2>
@@ -56,7 +56,7 @@ const AboutPage = () => {
               />
             </div>
             <Flex className="flex flex-col max-w-xl">
-              <div className="pt-4">
+              <div className="pt-4 text-center">
                 <h1 className="text-3xl font-bold text-[rgb(19,40,126)]">
                   The best cleaning service in city
                 </h1>
