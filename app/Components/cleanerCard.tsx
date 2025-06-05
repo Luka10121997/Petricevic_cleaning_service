@@ -19,10 +19,10 @@ export default function CleanerCard({ name, image, role }: CleanerCardProps) {
       <h3 className="mt-4 font-bold text-lg">{name}</h3>
       <p className="text-sm mt-1 centered-paragraph">{role}</p>
       <div className="flex justify-center gap-4 mt-3">
-        <Link href='/About/'>
+        <Link href='https://www.instagram.com/obrt_za_ciscenje_petricevic?igsh=d2FqeGdtdDQwbThp'>
           <FaInstagram className="hover:text-pink-400 transition-colors duration-300 mb-2" />
         </Link>
-        <Link href='/About/'>
+        <Link href='https://www.facebook.com/profile.php?id=61568585374191'>
           <FaFacebook className="hover:text-blue-400 transition-colors duration-300" />
         </Link>
       </div>

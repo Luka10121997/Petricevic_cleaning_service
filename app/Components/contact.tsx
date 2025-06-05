@@ -29,7 +29,7 @@ export default function Contact() {
         {cards.map((card, idx) => (
           <div
             key={idx}
-            className="rounded-xl shadow-md p-8 text-center transition hover:shadow-xl" style={{ backgroundColor: "rgb(246, 250, 255)" }}
+            className="rounded-xl shadow-md p-8 text-center transition hover:shadow-xl break-words" style={{ backgroundColor: "rgb(246, 250, 255)" }}
           >
             <div className="flex justify-center">
               <div className="bg-gray-100 p-4 rounded-full">

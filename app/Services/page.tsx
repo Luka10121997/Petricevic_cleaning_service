@@ -34,7 +34,7 @@ const ServicesPage = () => {
         </Container>
       </Section>
       {/* Hero sekcija */}
-      <Section className="bg-blue-50 py-20 text-center pt-30">
+      <Section className="py-20 text-center pt-30" style={{ backgroundColor: "#f2f2f2" }}>
         <h1 className="text-4xl font-bold text-blue-900">Naše usluge čišćenja</h1>
         <p className="text-gray-600 font-bold mt-4 text-lg">Čistoća u koju se možete pouzdati – dom, ured ili auto.</p>
       </Section>

@@ -34,11 +34,11 @@ const ContactPage = () => {
         <Container>
           <div className="flex flex-col items-center gap-1">
             {/* Kartice */}
-            <div className='mt-0'>
+            <div className='mt-0 card-animate' style={{ animationDelay: "0.5s" }}>
               <Contact />
             </div>
             {/* Forma */}
-            <div className="mt-0 pl-12 pr-12 py-4 mb-4 w-full max-w-3xl top-0">
+            <div className="w-full px-4 py-4 mx-auto max-w-full fade-in smallForm">
               <Heading
                 className="text-4xl font-bold text-center mb-2"
                 style={{ color: 'rgb(19, 40, 126)' }}

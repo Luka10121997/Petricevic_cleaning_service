@@ -41,7 +41,8 @@ export default function ContactForm() {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-md mx-auto p-6 space-y-6 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg"
+        className="w-full max-w-full sm:max-w-md px-4 sm:px-6 py-6 mx-auto space-y-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg"
+
       >
         {/* NAME */}
         <div>

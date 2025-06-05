@@ -3,7 +3,7 @@ import { Container, Flex, Section } from '@radix-ui/themes'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import menImage from '@/app/Images/men-cleaning.jpeg'
+import majaImage from '../../public/images/home/maja_cleaning.jpg'
 import Team from '../Components/cleaners';
 import CertificateAndStuffPage from './certificateAndStuff';
 
@@ -50,18 +50,18 @@ const AboutPage = () => {
                 }`}
             >
               <Image
-                src={menImage}
-                alt="menImage"
+                src={majaImage}
+                alt="majaImage"
                 className="md:w-82 md:h-68 lg:w-[600px] lg:h-[570px] rounded-full"
               />
             </div>
             <Flex className="flex flex-col max-w-xl">
-              <div className="pt-4 text-center">
+              <div className="pt-4 text-center sm:text-left">
                 <h1 className="text-3xl font-bold text-[rgb(19,40,126)]">
                   The best cleaning service in city
                 </h1>
               </div>
-              <div className="pt-2 flex flex-wrap">
+              <div className="pt-2 flex text-center sm:text-left flex-wrap">
                 <p className="text-lg font-mulish">
                   Mi smo servis za čišćenje Petričević otvoren 2024. godine. Mi kao mlada tvrtka pružamo najbolje iskustvo čišćenja sa profesionalnim, modernim strojevima i vrlo ljubaznim osobljem. Naši klijenti su jako zadovoljni i svugdje nas preporučuju.
                 </p>
@@ -73,7 +73,7 @@ const AboutPage = () => {
           </Flex>
         </Container>
       </Section>
-      <Section className="bg-blue-50 dark:bg-gray-800 py-20 px-6 section">
+      <Section className="bg-blue-50 dark:bg-gray-800 py-20 px-6 section fade-in">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Vizija */}
@@ -113,7 +113,7 @@ const AboutPage = () => {
           </div>
         </Container>
       </Section>
-      <Section style={{ borderTopRightRadius: '40%' }} className="bg-blue-50 dark:bg-gray-800 mt-1 py-10">
+      <Section style={{ borderTopRightRadius: '40%' }} className="bg-blue-50 dark:bg-gray-800 mt-1 py-10 fade-in">
         <Container>
           <CertificateAndStuffPage />
         </Container>
