@@ -21,7 +21,7 @@ export default async function ServicePage({ params }: PageProps) {
   return (
     <div className='bg-gradient-to-br from-white via-blue-50 to-green-50 background'>
       <div className="max-w-4xl mx-auto p-8">
-        <h1 className="text-3xl font-bold mb-4">{service.title}</h1>
+        <h1 className="text-3xl font-bold mb-4 text-center sm:text-left">{service.title}</h1>
         <p className="text-gray-800 leading-relaxed mb-6">{service.description}</p>
 
         {/* Stylizirana kartica sa features i ikonama */}
@@ -46,7 +46,7 @@ export default async function ServicePage({ params }: PageProps) {
             <h3 className="text-lg font-semibold text-gray-700 mb-2">Cijena usluge</h3>
             <p className="text-3xl font-bold text-green-600">Već od {service.price} €</p>
             <p className="text-sm text-gray-500 mt-1">
-              *Cijena najviše ovisi o kvadraturi i još nekim dodatnim zahtjevima
+              <br /> Cijena najviše ovisi o kvadraturi i još nekim dodatnim zahtjevima
             </p>
           </div>
         )}
