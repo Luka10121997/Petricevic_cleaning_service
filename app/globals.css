@@ -174,22 +174,16 @@ p {
   -webkit-transform: rotate(-45deg);
 }
 
-.aboutSection {
+.topSection {
   background-image: url(https://cleener-next.netlify.app/images/page-title.jpg);
   background-size: cover;
-  background-clip: border-box;
-  box-sizing : border-box;
-  flex-direction : column;
-  font-weight : 400;
-  position: relative;
-  font-weight : 400;
-  font-size: 15px;
-  height : 400px;
-  width: auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+
 @media (max-width: 768px) {
-  .aboutSection {
+  .topSection {
     flex-direction: row;
     height: auto; /* 🚀 Popravi prelijevanje */
     align-items: center; /* opcionalno: centriraj sve u koloni */

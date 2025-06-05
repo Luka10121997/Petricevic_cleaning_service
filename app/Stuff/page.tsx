@@ -28,7 +28,7 @@ const machines = [
 export default function StuffPage() {
   return (
     <>
-      <Section className='flex flex-col items-center justify-center h-screen aboutSection'>
+      <Section className="topSection flex flex-col items-center justify-center min-h-[200px] sm:min-h-[230px] md:min-h-[280px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[400px]">
         <Container>
           <Flex className='row'>
             <Flex className='col col-xs-12'>
