@@ -1,16 +1,14 @@
-'use client'
-import React from 'react'
-import { Container } from '@radix-ui/themes';
+'use client';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import classNames from 'classnames';
-import logo from '@/app/Images/logo.jpg'
 import Image from 'next/image';
+import { Container } from '@radix-ui/themes';
 import { MobileIcon } from '@radix-ui/react-icons';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
-import { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
-
+import classNames from 'classnames';
+import logo from '@/app/Images/logo.jpg';
 
 const NavBar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,7 +19,11 @@ const NavBar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href='/'>
-            <Image src={logo} alt='logo' className='w-30 h-21 profileImage pt-1 pb-1' />
+            <Image
+              src={logo}
+              alt='logo'
+              className='w-30 h-21 pt-1 pb-1 rounded-full'
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -29,18 +31,27 @@ const NavBar = () => {
             <NavLinks />
           </div>
 
-          {/* Contact and Icons */}
+          {/* Desktop Contact + Icons */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link className='phoneButton flex items-center gap-2' href='tel:+385957210020'>
+            <Link
+              className='phoneButton flex items-center gap-2'
+              href='tel:+385957210020'
+            >
               <MobileIcon className='phoneIcon' color='rgb(19, 40, 126)' />
               +385 95 721 0020
             </Link>
-            <Link href='https://www.instagram.com/obrt_za_ciscenje_petricevic?igsh=d2FqeGdtdDQwbThp'><FaInstagram className='hover:text-pink-400 transition-colors duration-300' size={25} /></Link>
-            <Link href='https://www.facebook.com/profile.php?id=61568585374191'><FaFacebook className='hover:text-blue-400 transition-colors duration-300' size={25} /></Link>
+            <Link href='https://www.instagram.com/obrt_za_ciscenje_petricevic?igsh=d2FqeGdtdDQwbThp'>
+              <FaInstagram className='hover:text-pink-400 transition-colors duration-300' size={25} />
+            </Link>
+            <Link href='https://www.facebook.com/profile.php?id=61568585374191'>
+              <FaFacebook className='hover:text-blue-400 transition-colors duration-300' size={25} />
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}
           <button
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-blue-900"
           >
@@ -50,15 +61,19 @@ const NavBar = () => {
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg py-4 px-6 space-y-4">
-            <NavLinks mobile />
+          <div className="md:hidden mt-4 bg-white rounded-xl shadow-lg py-6 px-6 space-y-6">
+            <NavLinks mobile onLinkClick={() => setMobileMenuOpen(false)} />
             <div className="flex flex-col space-y-3">
               <Link className='text-sm font-semibold text-blue-800' href='tel:+385957210020'>
                 📞 +385 95 721 0020
               </Link>
               <div className="flex gap-4 text-blue-800">
-                <Link href='https://www.instagram.com/obrt_za_ciscenje_petricevic?igsh=d2FqeGdtdDQwbThp'><FaInstagram size={22} /></Link>
-                <Link href='https://www.facebook.com/profile.php?id=61568585374191'><FaFacebook size={22} /></Link>
+                <Link href='https://www.instagram.com/obrt_za_ciscenje_petricevic?igsh=d2FqeGdtdDQwbThp'>
+                  <FaInstagram size={22} />
+                </Link>
+                <Link href='https://www.facebook.com/profile.php?id=61568585374191'>
+                  <FaFacebook size={22} />
+                </Link>
               </div>
             </div>
           </div>
@@ -68,8 +83,13 @@ const NavBar = () => {
   );
 };
 
-
-const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
+const NavLinks = ({
+  mobile = false,
+  onLinkClick,
+}: {
+  mobile?: boolean;
+  onLinkClick?: () => void;
+}) => {
   const currentPath = usePathname();
 
   const links = [
@@ -89,9 +109,10 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
           <li key={link.href}>
             <Link
               href={link.href}
+              onClick={onLinkClick}
               className={classNames(
                 'relative inline-block text-sm font-medium text-gray-700 transition-colors duration-300',
-                'hover:text-blue-900', // promjena boje teksta na hover
+                'hover:text-blue-900',
                 {
                   'text-blue-900': isActive,
                 }
@@ -115,4 +136,4 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
   );
 };
 
-export default NavBar
+export default NavBar;
