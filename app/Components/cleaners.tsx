@@ -5,12 +5,12 @@ import kristeImage from '@/app/Images/kriste-with_machine.jpg'
 
 const cleaners = [
   {
-    name: 'Maja Petricevic',
+    name: 'Maja Petričević',
     role: 'Cleaner Leader',
     image: majaImage
   },
   {
-    name: 'Kristijan Petricevic',
+    name: 'Kristijan Petričević',
     role: 'Cleaner Leader',
     image: kristeImage
   }

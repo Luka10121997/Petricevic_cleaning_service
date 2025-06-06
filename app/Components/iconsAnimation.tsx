@@ -51,10 +51,10 @@ export default function IconRowAnimated() {
             repeatType: "loop",
             ease: "easeInOut",
           }}
-          className="text-gray-500 text-4xl"
+          className="text-gray-500 text-2xl sm:text-4xl"
         >
           {item.icon}
-          <div className="text-2xl mb-2 whitespace-pre-line">{item.label}</div>
+          <div className="text-xl sm:text-2xl mb-2 whitespace-pre-line">{item.label}</div>
         </motion.div>
       ))}
     </div>

@@ -25,7 +25,7 @@ const AboutPage = () => {
           <Flex className='row'>
             <Flex className='col col-xs-12'>
               <div className='text-center'>
-                <h2 className='font-bold text-6xl text-center'>
+                <h2 className='font-bold text-4xl sm:text-6xl text-center'>
                   About us
                 </h2>
                 <ol>
@@ -57,7 +57,7 @@ const AboutPage = () => {
             </div>
             <Flex className="flex flex-col max-w-xl">
               <div className="pt-4 text-center sm:text-left">
-                <h1 className="text-3xl font-bold text-[rgb(19,40,126)]">
+                <h1 className="text-2xl sm:text-3xl font-bold text-[rgb(19,40,126)]">
                   The best cleaning service in city
                 </h1>
               </div>
@@ -80,7 +80,7 @@ const AboutPage = () => {
             <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-blue-600 text-3xl">🌟</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-white">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 dark:text-white">
                   Naša vizija
                 </h2>
               </div>
@@ -95,7 +95,7 @@ const AboutPage = () => {
             <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-blue-600 text-3xl">⏱️</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-white">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 dark:text-white">
                   Tajming i iskustvo
                 </h2>
               </div>

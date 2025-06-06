@@ -26,7 +26,7 @@ export default async function ServicePage({ params }: PageProps) {
 
         {/* Stylizirana kartica sa features i ikonama */}
         {service.features && service.features.length > 0 && (
-          <div className="mt-8 bg-white shadow-md rounded-2xl p-6 border border-gray-100">
+          <div className="mt-8 bg-white shadow-md rounded-2xl p-6 border border-gray-100 card-animate">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800">Što je uključeno</h2>
             <ul className="space-y-3">
               {service.features.map((feature, index) => {
@@ -42,7 +42,7 @@ export default async function ServicePage({ params }: PageProps) {
         )}
 
         {service.price && (
-          <div className="mt-6 bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+          <div className="mt-6 bg-white border border-gray-200 rounded-xl p-6 shadow-sm fade-in">
             <h3 className="text-lg font-semibold text-gray-700 mb-2">Cijena usluge</h3>
             <p className="text-3xl font-bold text-green-600">Već od {service.price} €</p>
             <p className="text-sm text-gray-500 mt-1">

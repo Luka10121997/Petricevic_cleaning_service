@@ -33,7 +33,7 @@ export default function StuffPage() {
           <Flex className='row'>
             <Flex className='col col-xs-12'>
               <div className='text-center'>
-                <h2 className='font-bold text-6xl text-center'>
+                <h2 className='font-bold text-4xl sm:text-6xl text-center'>
                   Our stuff
                 </h2>
                 <ol>
@@ -53,7 +53,7 @@ export default function StuffPage() {
       <Section className="py-10 pt-22" style={{ backgroundColor: "#f2f2f2" }}>
         <Container>
           <div className="text-center mb-10">
-            <Heading className="text-4xl font-bold text-blue-900">Our Cleaning Equipment</Heading>
+            <Heading className="text-3xl sm:text-4xl font-bold text-blue-900">Our Cleaning Equipment</Heading>
             <Text className="text-lg text-gray-600 mt-2">
               We use professional-grade machines to ensure your spaces are spotless.
             </Text>

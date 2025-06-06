@@ -14,7 +14,7 @@ const RelatedServices = ({ params }: PageProps) => {
   return (
     <section className="mt-12">
       <h2 className="text-2xl font-semibold mb-6">Ostale usluge</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 card-animate">
         {related.map((service) => (
           <Link href={service.link} key={service.id}>
             <div className="rounded-2xl border p-5 shadow-md hover:shadow-xl transition duration-300 bg-white hover:-translate-y-1 overflow-x-auto">

@@ -13,7 +13,7 @@ const ContactPage = () => {
           <Flex className='row'>
             <Flex className='col col-xs-12'>
               <div className='text-center'>
-                <h2 className='font-bold text-6xl text-center'>
+                <h2 className='font-bold text-4xl sm:text-6xl text-center'>
                   Contact us
                 </h2>
                 <ol>
@@ -40,7 +40,7 @@ const ContactPage = () => {
             {/* Forma */}
             <div className="w-full px-4 py-4 mx-auto max-w-full fade-in smallForm">
               <Heading
-                className="text-4xl font-bold text-center mb-2"
+                className="text-2xl sm:text-4xl font-bold text-center mb-2"
                 style={{ color: 'rgb(19, 40, 126)' }}
               >
                 Contact us via our official E-mail

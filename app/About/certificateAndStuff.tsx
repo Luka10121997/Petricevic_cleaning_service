@@ -8,7 +8,7 @@ import Link from 'next/link';
 const CertificateAndStuffPage = () => {
   return (
     <div>
-      <h2 className="text-3xl font-bold text-center mb-12" style={{ color: 'rgb(19, 40, 126)' }}>
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12" style={{ color: 'rgb(19, 40, 126)' }}>
         Certifikati i oprema
       </h2>
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
