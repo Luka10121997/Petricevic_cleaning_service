@@ -40,17 +40,17 @@ export function ServicesIconSlider() {
         grabCursor={true}
         breakpoints={{
           0: { slidesPerView: 1 },      // za sve manje od 640px
-          640: { slidesPerView: 3 },
+          640: { slidesPerView: 2 },
           1024: { slidesPerView: 5 },
         }}
       >
         {services.map((service, index) => (
           <SwiperSlide key={service.id}>
             <Link href={service.link}>
-              <div className="bg-gray-100 p-6 h-full sm:h-60 rounded-2xl text-center sm:text-center shadow hover:shadow-md transition">
+              <div className="bg-gray-100 p-6 h-full sm:h-60 rounded-2xl text-center sm:text-center shadow hover:bg-blue-400 hover:text-white duration-300">
                 <div className="flex justify-center mb-4">{icons[index]()}</div>
-                <h3 className="text-xl font-bold text-blue-800 mb-2">{service.title}</h3>
-                <p className="text-gray-700">{service.description}</p>
+                <h3 className="text-xl font-bold text-blue-800 mb-2 hover:text-white">{service.title}</h3>
+                <p className="text-gray-700  hover:text-white">{service.description}</p>
               </div>
             </Link>
           </SwiperSlide>

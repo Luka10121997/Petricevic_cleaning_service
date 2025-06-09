@@ -17,17 +17,16 @@ export default function GallerySwiper({ images }: { images: string[] }) {
       }}
       loop={true}
       speed={1000}
-      grabCursor={true}>
+      grabCursor={true}
+    >
       {images.map((src, index) => (
-        <SwiperSlide key={index}>
-          <div
-            className="relative w-full h-[250px] xs:h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
-          >
+        <SwiperSlide key={index} className="w-full flex justify-center items-center">
+          <div className="relative w-full aspect-[1/1] sm:aspect-[4/3] overflow-hidden">
             <Image
               src={src}
               alt={`Gallery image ${index + 1}`}
               fill
-              className="object-cover rounded fade-in"
+              className="object-contain rounded fade-in"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
               priority
             />

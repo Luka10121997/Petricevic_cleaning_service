@@ -58,7 +58,7 @@ const AboutPage = () => {
             <Flex className="flex flex-col max-w-xl">
               <div className="pt-4 text-center sm:text-left">
                 <h1 className="text-2xl sm:text-3xl font-bold text-[rgb(19,40,126)]">
-                  The best cleaning service in city
+                  Najbolji servis za čišćenje u gradu
                 </h1>
               </div>
               <div className="pt-2 flex text-center sm:text-left flex-wrap">

@@ -24,7 +24,7 @@ export async function sendEmail(data: {
   try {
     await transporter.sendMail({
       from: GMAIL_USERNAME,
-      to: 'luka.petricevic97@gmail.com',
+      to: 'usluge.ciscenja.petricevic@gmail.com',
       subject: `New message from ${name}`,
       text: message,
       replyTo: email

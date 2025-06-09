@@ -53,9 +53,9 @@ export default function StuffPage() {
       <Section className="py-10 pt-22" style={{ backgroundColor: "#f2f2f2" }}>
         <Container>
           <div className="text-center mb-10">
-            <Heading className="text-3xl sm:text-4xl font-bold text-blue-900">Our Cleaning Equipment</Heading>
+            <Heading className="text-3xl sm:text-4xl font-bold text-blue-900">Strojevi/Oprema za čišćenje</Heading>
             <Text className="text-lg text-gray-600 mt-2">
-              We use professional-grade machines to ensure your spaces are spotless.
+              Koristimo profesionalne strojeve kako bismo osigurali besprijekornu čistoću vaših prostora.
             </Text>
           </div>
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10">

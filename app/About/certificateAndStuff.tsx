@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const CertificateAndStuffPage = () => {
   return (
-    <div>
+    <div className='card-animate'>
       <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12" style={{ color: 'rgb(19, 40, 126)' }}>
         Certifikati i oprema
       </h2>

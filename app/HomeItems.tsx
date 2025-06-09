@@ -42,14 +42,14 @@ const HomeItems = () => {
           </Heading>
           <Text className="text-lg lg:text-1xl font-bold" style={{ color: 'rgb(44, 49, 71)' }}>
             <ul className="text-left">
-              <li>We are certified company Petričević. We provide best cleaning</li>
-              <li>services for you, your company, your home and vehicles.</li>
+              <li>Mi smo certificirani obrt za čišćenje Petričević.</li>
+              <li>Pružamo najbolje usluge čišćenja za vas, vašu tvrtku, vaš dom i vozila.</li>
             </ul>
           </Text>
           <div className="mt-8">
             <Link href="/About" className="btn-theme flex items-center gap-2 justify-center">
               <ArrowRight size={20} />
-              What we offer
+              Što nudimo
             </Link>
           </div>
         </div>
@@ -113,7 +113,7 @@ const HomeItems = () => {
               </Text>
             </Flex>
             {images.length > 0 ? (
-              <div className="w-[90%] max-w-5xl mt-2">
+              <div className="w-[90%] max-w-4xl mt-2">
                 <GallerySwiper images={images} />
               </div>
             ) :
