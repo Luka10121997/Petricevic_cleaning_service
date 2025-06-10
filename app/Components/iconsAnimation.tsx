@@ -12,7 +12,7 @@ import { PiBuildingOfficeBold, PiOfficeChairFill, PiOven } from "react-icons/pi"
 const icons = [
   { id: 1, icon: <FaKitchenSet size={70} />, label: "Kitchen" },
   { id: 2, icon: <FaWindowRestore size={70} />, label: "Windows" },
-  { id: 3, icon: <FaToilet size={70} />, label: "Toilet" },
+  { id: 3, icon: <FaToilet size={70} />, label: "Toilet/WC" },
   { id: 4, icon: <PiOven size={70} />, label: "Oven" },
   { id: 5, icon: <GiSofa size={70} />, label: "Sofa" },
   { id: 6, icon: <GiFloorPolisher size={70} />, label: "Floor polish" },
@@ -36,7 +36,7 @@ const iconVariants = {
 
 export default function IconRowAnimated() {
   return (
-    <div className="flex flex-col justify-center md:flex-row items-center gap-12 py-10">
+    <div className="flex flex-col justify-center md:flex-row items-center gap-12 py-10 text-left sm:text-center">
       {icons.map((item, index) => (
         <motion.div
           key={item.id}

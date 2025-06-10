@@ -44,11 +44,11 @@ const Footer = () => {
 
 const NavLinks = () => {
   const links = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/About/' },
-    { label: 'Services', href: '/Services/' },
+    { label: 'Naslovnica', href: '/' },
+    { label: 'O nama', href: '/About/' },
+    { label: 'Usluge', href: '/Services/' },
     { label: 'Contact', href: '/Contact/' },
-    { label: 'Stuff', href: '/Stuff/' },
+    { label: 'Oprema', href: '/Stuff/' },
   ];
 
   return (

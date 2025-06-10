@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -91,49 +91,142 @@ const NavLinks = ({
   onLinkClick?: () => void;
 }) => {
   const currentPath = usePathname();
+  const [hovered, setHovered] = useState(false);
+  const timeoutId = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current);
+      timeoutId.current = null;
+    }
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutId.current = setTimeout(() => {
+      setHovered(false);
+    }, 150);
+  };
 
   const links = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/About' },
-    { label: 'Services', href: '/Services' },
+    { label: 'Naslovnica', href: '/' },
+    { label: 'O nama', href: '/About' },
+    { label: 'Usluge', href: '/Services' },
     { label: 'Contact', href: '/Contact' },
-    { label: 'Stuff', href: '/Stuff' },
+    { label: 'Oprema', href: '/Stuff' },
   ];
 
   return (
-    <ul className={mobile ? 'flex flex-col space-y-2' : 'flex space-x-6'}>
-      {links.map((link) => {
-        const isActive = currentPath === link.href;
+    <>
+      <ul className={mobile ? 'flex flex-col space-y-2' : 'flex space-x-6'}>
+        {links.map((link) => {
+          const isActive = currentPath === link.href;
 
-        return (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              onClick={onLinkClick}
-              className={classNames(
-                'relative inline-block text-sm font-medium text-gray-700 transition-colors duration-300',
-                'hover:text-blue-900',
-                {
-                  'text-blue-900': isActive,
-                }
-              )}
-            >
-              <span
+          // Provjera kada se radi hover na Nav link "Usluge"
+          if (link.label === 'Usluge') {
+            return (
+              <li
+                key={link.href}
+                className="relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link
+                  href={link.href}
+                  onClick={onLinkClick}
+                  className={classNames(
+                    'relative inline-block text-sm font-medium text-gray-700 transition-colors duration-300',
+                    'hover:text-blue-900',
+                    {
+                      'text-blue-900': isActive,
+                    }
+                  )}
+                >
+                  <span
+                    className={classNames(
+                      'before:content-[""] before:absolute before:left-0 before:-bottom-1 before:h-[2px] before:bg-blue-900 before:transition-all before:duration-300 before:w-0 hover:before:w-full',
+                      {
+                        'before:w-full': isActive,
+                      }
+                    )}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+
+                {/* DROPDOWN PRIKAZ */}
+                {hovered && (
+                  <div
+                    className="absolute top-full left-0 bg-gray-900 rounded-md w-64 z-50 border border-gray-700 p-4 shadow-lg"
+                    style={{ marginTop: 0 }}
+                    onMouseEnter={handleMouseEnter} // Ovdje isto držimo hover
+                    onMouseLeave={handleMouseLeave} // i kad izlazimo sa dropdowna
+                  >
+                    <ServicesLinks />
+                  </div>
+                )}
+              </li>
+            );
+          }
+
+          // Ostali linkovi
+          return (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                onClick={onLinkClick}
                 className={classNames(
-                  'before:content-[""] before:absolute before:left-0 before:-bottom-1 before:h-[2px] before:bg-blue-900 before:transition-all before:duration-300 before:w-0 hover:before:w-full',
+                  'relative inline-block text-sm font-medium text-gray-700 transition-colors duration-300',
+                  'hover:text-blue-900',
                   {
-                    'before:w-full': isActive,
+                    'text-blue-900': isActive,
                   }
                 )}
               >
-                {link.label}
-              </span>
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+                <span
+                  className={classNames(
+                    'before:content-[""] before:absolute before:left-0 before:-bottom-1 before:h-[2px] before:bg-blue-900 before:transition-all before:duration-300 before:w-0 hover:before:w-full',
+                    {
+                      'before:w-full': isActive,
+                    }
+                  )}
+                >
+                  {link.label}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 };
 
 export default NavBar;
+
+
+
+const ServicesLinks = () => {
+  const links = [
+    { label: 'Čišćenje stanova i kuća', href: '/Services/house-cleaning' },
+    { label: 'Dubinsko čišćenje namještaja i tepiha', href: '/Services/couch-cleaning' },
+    { label: 'Uredsko čišćenje', href: '/Services/office-cleaning' },
+    { label: 'Dubinsko čišćenje automobila', href: '/Services/car-cleaning' },
+    { label: 'Generalno čišćenje nakon renovacija', href: '/Services/renovation-cleaning' },
+    { label: 'Dezinfekcija prostora', href: '/Services/disinfection' }
+  ];
+
+  return (
+    <ul className="space-y-2 text-sm text-gray-300">
+      {links.map(link => (
+        <li key={link.href} className="whitespace-nowrap">
+          <Link
+            className='text-gray-300 hover:text-yellow-600 hover:font-bold transition-colors duration-200'
+            href={link.href}>
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
