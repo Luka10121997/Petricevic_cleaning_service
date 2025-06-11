@@ -23,7 +23,7 @@ export default function Team() {
       <p className="text-white/70 mb-10 max-w-xl mx-auto">
         Vaši pouzdani partneri za čistoću doma i ureda.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto mt-10 px-4 mb-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto mt-10 px-4 mb-20 fade-in">
         {cleaners.map((cleaner, idx) => (
           <CleanerCard key={idx} {...cleaner} />
         ))}

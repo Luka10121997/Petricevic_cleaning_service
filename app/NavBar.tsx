@@ -17,15 +17,20 @@ const NavBar = () => {
     <nav className='sticky top-0 left-0 w-full bg-[#f8f9faf7] px-5 shadow-md z-40'>
       <Container>
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href='/'>
-            <Image
-              src={logo}
-              alt='logo'
-              className='w-30 h-21 pt-1 pb-1 rounded-full'
-            />
-          </Link>
+          <div className='flex items-center space-x-4'>
+            {/* Logo */}
+            <Link href='/'>
+              <Image
+                src={logo}
+                alt='logo'
+                className='w-30 h-21 pt-1 pb-1 rounded-full'
+              />
+            </Link>
 
+            <h1 className="text-xl font-sans font-bold tracking-tight text-blue-900">
+              Usluge čišćenja Petričević
+            </h1>
+          </div>
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             <NavLinks />
@@ -221,7 +226,7 @@ const ServicesLinks = () => {
       {links.map(link => (
         <li key={link.href} className="whitespace-nowrap">
           <Link
-            className='text-gray-300 hover:text-yellow-600 hover:font-bold transition-colors duration-200'
+            className='text-gray-300 hover:text-yellow-600 hover:font-bold transition-colors duration-200 whitespace-pre-line'
             href={link.href}>
             {link.label}
           </Link>
