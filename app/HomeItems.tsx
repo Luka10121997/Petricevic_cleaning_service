@@ -48,7 +48,7 @@ const HomeItems = () => {
           </Text>
           <div className="mt-8">
             <Link href="/About" className="btn-theme flex items-center gap-2 justify-center">
-              <ArrowRight size={20} />
+              <ArrowRight size={22} />
               Što nudimo
             </Link>
           </div>
