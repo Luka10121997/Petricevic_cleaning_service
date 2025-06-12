@@ -163,7 +163,7 @@ const NavLinks = ({
                 {hovered && (
                   <div
                     className="absolute top-full left-0 bg-gray-900 rounded-md w-64 z-50 border border-gray-700 p-4 shadow-lg"
-                    style={{ marginTop: 0 }}
+                    style={{ marginTop: 4 }}
                     onMouseEnter={handleMouseEnter} // Ovdje isto držimo hover
                     onMouseLeave={handleMouseLeave} // i kad izlazimo sa dropdowna
                   >
