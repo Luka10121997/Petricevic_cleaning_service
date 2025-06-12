@@ -40,7 +40,7 @@ export function ServicesIconSlider() {
         grabCursor={true}
         breakpoints={{
           0: { slidesPerView: 1 },      // za sve manje od 640px
-          640: { slidesPerView: 2 },
+          640: { slidesPerView: 2 },  //veće od 640px
           1024: { slidesPerView: 5 },
         }}
       >

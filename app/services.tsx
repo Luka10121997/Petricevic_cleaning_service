@@ -62,12 +62,11 @@ export const services: ServiceData[] = [
       "Uklanjanje neugodnih mirisa i bakterija",
       "Parno čišćenje teško dostupnih mjesta",
       "Antibakterijsko tretiranje volana, ručki i komandi",
-      "Pranje i poliranje staklenih površina iznutra",
+      "Pranje staklenih površina iznutra",
       "Vanjsko pranje karoserije bez ogrebotina",
       "Čišćenje felgi i blatobrana",
       "Nanošenje zaštitnog sloja za lak i plastiku",
-      "Poliranje svjetala i retrovizora",
-      "Brzo sušenje interijera snažnim ventilatorima"
+      "Brzo sušenje interijera"
     ],
     price: "100"
   },

@@ -52,7 +52,7 @@ const AboutPage = () => {
               <Image
                 src={majaImage}
                 alt="majaImage"
-                className="md:w-82 md:h-68 lg:w-[600px] lg:h-[570px] rounded-full"
+                className="md:w-82 md:h-68 lg:w-[600px] lg:h-[570px] rounded-full lg:rounded-full"
               />
             </div>
             <Flex className="flex flex-col max-w-xl">

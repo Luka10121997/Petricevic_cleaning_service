@@ -36,7 +36,7 @@ const iconVariants = {
 
 export default function IconRowAnimated() {
   return (
-    <div className="flex flex-col justify-center md:flex-row items-center gap-12 py-10 text-left sm:text-center">
+    <div className="flex flex-col justify-center lg:flex-row items-center gap-12 py-10 text-left sm:text-center">
       {icons.map((item, index) => (
         <motion.div
           key={item.id}

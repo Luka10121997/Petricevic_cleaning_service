@@ -32,12 +32,12 @@ const NavBar = () => {
             </h1>
           </div>
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <NavLinks />
           </div>
 
           {/* Desktop Contact + Icons */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-6">
             <Link
               className='phoneButton flex items-center gap-2'
               href='tel:+385957210020'
@@ -58,7 +58,7 @@ const NavBar = () => {
             aria-label="Toggle mobile menu"
             aria-expanded={isMobileMenuOpen}
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-blue-900"
+            className="lg:hidden text-blue-900"
           >
             {isMobileMenuOpen ? <HiX size={30} /> : <HiMenu size={30} />}
           </button>
@@ -66,7 +66,7 @@ const NavBar = () => {
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 bg-white rounded-xl shadow-lg py-6 px-6 space-y-6">
+          <div className="lg:hidden mt-4 bg-white rounded-xl shadow-lg py-6 px-6 space-y-6">
             <NavLinks mobile onLinkClick={() => setMobileMenuOpen(false)} />
             <div className="flex flex-col space-y-3">
               <Link className='text-sm font-semibold text-blue-800' href='tel:+385957210020'>
