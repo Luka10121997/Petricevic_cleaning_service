@@ -7,12 +7,14 @@ const cleaners = [
   {
     name: 'Maja Petričević',
     role: 'Specijalist za čišćenje',
-    image: majaImage
+    image: majaImage,
+    number: '+385 993 790 170'
   },
   {
     name: 'Kristijan Petričević',
     role: 'Specijalist za čišćenje',
-    image: kristeImage
+    image: kristeImage,
+    number: '+385 957 210 020'
   }
 ];
 

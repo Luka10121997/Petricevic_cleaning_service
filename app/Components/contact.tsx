@@ -39,12 +39,12 @@ export default function Contact() {
             <h3 className="text-lg font-semibold text-blue-900 mb-1">{card.title}</h3>
             {card.title === 'Call Now' ? (
               card.details.map((detail, i) => (
-                <p key={i} className="text-sm text-gray-700">
+                <p key={i} className="text-sm font-semibold text-gray-700">
                   <br />{detail} <br />
                 </p>
               ))
             ) : (
-              <p className="text-sm text-gray-700  whitespace-pre-line">
+              <p className="text-sm text-gray-700 font-semibold whitespace-pre-line">
                 <br />{card.details.join(' ')} <br />
               </p>
             )}

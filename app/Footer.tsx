@@ -1,6 +1,6 @@
 'use client';
 import { Container } from '@radix-ui/themes';
-import logo from '@/app/Images/logo.jpg';
+import logo from '@/app/Images/logo3.png';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,7 +15,7 @@ const Footer = () => {
             <p className="text-sm text-gray-300 whitespace-nowrap">Best Cleaning Service</p>
             <div className='pt-3'>
               <Link href='/'>
-                <Image src={logo} alt='logo' className='w-30 h-22 profileImage'
+                <Image src={logo} alt='logo' className='w-32 h-full border-2 profileImage'
                 />
               </Link>
             </div>

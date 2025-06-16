@@ -8,7 +8,7 @@ import { MobileIcon } from '@radix-ui/react-icons';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
 import classNames from 'classnames';
-import logo from '@/app/Images/logo.jpg';
+import logo from '@/app/Images/logo3.png';
 
 const NavBar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,12 +23,12 @@ const NavBar = () => {
               <Image
                 src={logo}
                 alt='logo'
-                className='w-30 h-21 pt-1 pb-1 rounded-full'
+                className='w-32 h-24 pt-1 pb-1 rounded-full object-cover border-4'
               />
             </Link>
-
-            <h1 className="text-xl font-sans font-bold tracking-tight text-blue-900">
-              Usluge čišćenja Petričević
+            <h1 className="text-xl sm:text-2xl font-extrabold text-gray-900 leading-tight">
+              <span className="block">Usluge čišćenja</span>
+              <span className="block text-blue-900">Petričević</span>
             </h1>
           </div>
           {/* Desktop Nav */}

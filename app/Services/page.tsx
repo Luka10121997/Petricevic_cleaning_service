@@ -79,7 +79,7 @@ const ServicesPage = () => {
           <div className="mt-4">
             <Link
               href="/Contact"
-              className="inline-block bg-white text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition"
+              className="inline-block bg-white text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-blue-900 hover:text-white transition"
             >
               Zatraži ponudu
             </Link>
