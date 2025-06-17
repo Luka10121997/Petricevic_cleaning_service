@@ -23,7 +23,7 @@ export default function Team() {
     <div className="bg-blue-900 py-12 px-6 text-white text-center w-full staffBackground">
       <h1 className="text-4xl font-bold mb-2">Stručnjaci za čišćenje</h1>
       <p className="text-white/70 mb-10 max-w-xl mx-auto">
-        Vaši pouzdani partneri za čistoću doma i ureda.
+        Vaši pouzdani partneri za čistoću doma,ureda ili auta.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto mt-10 px-4 mb-20 fade-in">
         {cleaners.map((cleaner, idx) => (

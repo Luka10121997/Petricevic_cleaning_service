@@ -20,7 +20,7 @@ const WorkingHours = () => {
       <ul className="text-gray-700 dark:text-gray-300 space-y-1">
         <li><strong>Ponedjeljak – Subota:</strong> 09:00 – 17:00</li>
         <li><strong>Nedjelja:</strong> Zatvoreno</li>
-        <li><strong>Područje djelovanja : Splitsko - dalmatinska županija</strong></li>
+        <li><strong>Područje djelovanja :</strong> Splitsko - dalmatinska županija</li>
       </ul>
     </div>
 

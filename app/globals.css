@@ -93,36 +93,12 @@ p {
   border-bottom-right-radius : 40%;
 }
 
-.btn {
-  box-sizing: border-box;
-  color: rgb(76, 81, 101);
-  font-family: Mulish, sans-serif;
-}
-.btn-theme:hover {
-  background-color: rgb(253, 224, 35);
-  color: rgb(19, 40, 126);
-}
-
 .phoneButton:hover {
   border-top-left-radius: 60px;
   border-bottom-right-radius: 60px;
   border-bottom-left-radius: 0px;
   border-top-right-radius: 60px;
   color : rgb(19, 40, 126);
-}
-
-.btn-theme {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: 800;
-  font-family: Mulish, sans-serif;
-  padding: 11px 23px;
-  background-color: rgb(253, 224, 35);
-  color: #1E1E1E;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
 }
 
 .arrow {

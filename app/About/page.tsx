@@ -66,7 +66,7 @@ const AboutPage = () => {
                   Mi smo servis za čišćenje Petričević otvoren 2024. godine. Mi kao mlada tvrtka pružamo najbolje iskustvo čišćenja sa profesionalnim, modernim strojevima i vrlo ljubaznim osobljem. Naši klijenti su jako zadovoljni i svugdje nas preporučuju.
                 </p>
                 <p className="text-lg font-medium italic pt-2">
-                  Povežimo se i učinimo vaš dom, automobil ili stan sretnim i čistim mjestom.
+                  Povežimo se i učinimo Vaš dom, automobil ili stan sretnim i čistim mjestom.
                 </p>
               </div>
             </Flex>

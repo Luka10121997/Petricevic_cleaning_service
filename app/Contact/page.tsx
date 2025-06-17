@@ -43,7 +43,7 @@ const ContactPage = () => {
                 className="text-2xl sm:text-4xl font-bold text-center mb-2"
                 style={{ color: 'rgb(19, 40, 126)' }}
               >
-                Contact us via our official E-mail
+                Kontaktirajte nas putem službenog e-maila!
               </Heading>
               <ContactForm />
             </div>

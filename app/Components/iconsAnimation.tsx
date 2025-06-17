@@ -1,27 +1,27 @@
 "use client";
 import { motion } from "framer-motion";
 import { BiSolidCarWash } from "react-icons/bi";
-import {
-  FaToilet,
-  FaWindowRestore,
-} from "react-icons/fa";
+import { FaToilet, FaWindowRestore } from "react-icons/fa";
 import { FaKitchenSet } from "react-icons/fa6";
 import { GiFloorPolisher, GiSofa } from "react-icons/gi";
-import { PiBuildingOfficeBold, PiOfficeChairFill, PiOven } from "react-icons/pi";
+import {
+  PiBuildingOfficeBold,
+  PiOfficeChairFill,
+  PiOven,
+} from "react-icons/pi";
 
 const icons = [
-  { id: 1, icon: <FaKitchenSet size={70} />, label: "Kitchen" },
-  { id: 2, icon: <FaWindowRestore size={70} />, label: "Windows" },
-  { id: 3, icon: <FaToilet size={70} />, label: "Toilet/WC" },
-  { id: 4, icon: <PiOven size={70} />, label: "Oven" },
+  { id: 1, icon: <FaKitchenSet size={70} />, label: "Kuhinja" },
+  { id: 2, icon: <FaWindowRestore size={70} />, label: "Prozori" },
+  { id: 3, icon: <FaToilet size={70} />, label: "WC" },
+  { id: 4, icon: <PiOven size={70} />, label: "Pećnica" },
   { id: 5, icon: <GiSofa size={70} />, label: "Sofa" },
-  { id: 6, icon: <GiFloorPolisher size={70} />, label: "Floor polish" },
-  { id: 7, icon: <PiBuildingOfficeBold size={70} />, label: "Buildings" },
-  { id: 8, icon: <BiSolidCarWash size={70} />, label: "Car Inside\nOutside" },
-  { id: 9, icon: <PiOfficeChairFill size={70} />, label: "Office" },
+  { id: 6, icon: <GiFloorPolisher size={70} />, label: "Poliranje podova" },
+  { id: 7, icon: <PiBuildingOfficeBold size={70} />, label: "Zgrade" },
+  { id: 8, icon: <BiSolidCarWash size={70} />, label: "Dubinsko pranje\nauta" },
+  { id: 9, icon: <PiOfficeChairFill size={70} />, label: "Ured" },
 ];
 
-// Define animation of each icon
 const iconVariants = {
   initial: { scale: 1, opacity: 0.6 },
   animate: {
@@ -36,7 +36,7 @@ const iconVariants = {
 
 export default function IconRowAnimated() {
   return (
-    <div className="flex flex-col justify-center lg:flex-row items-center gap-12 py-10 text-left sm:text-center">
+    <div className="flex flex-col justify-center lg:flex-row flex-wrap items-center gap-10 py-10 text-center">
       {icons.map((item, index) => (
         <motion.div
           key={item.id}
@@ -45,16 +45,16 @@ export default function IconRowAnimated() {
           initial="initial"
           animate="animate"
           transition={{
-            delay: index * 0.4, // delay each icon's animation
+            delay: index * 0.4,
             duration: 1.5,
             repeat: Infinity,
             repeatType: "loop",
             ease: "easeInOut",
           }}
-          className="text-gray-500 text-2xl sm:text-4xl"
+          className="flex flex-col items-center justify-center text-gray-700 w-32 text-center"
         >
           {item.icon}
-          <div className="text-xl sm:text-2xl mb-2 whitespace-pre-line">{item.label}</div>
+          <div className="text-base sm:text-lg mt-2 whitespace-pre-line">{item.label}</div>
         </motion.div>
       ))}
     </div>
