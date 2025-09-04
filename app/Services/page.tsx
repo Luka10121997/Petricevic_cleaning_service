@@ -1,0 +1,94 @@
+'use client';
+import React from 'react';
+import { FaCheckCircle } from 'react-icons/fa';
+import { Container, Flex, Section } from '@radix-ui/themes';
+import Link from 'next/link';
+import { ServicesIconSlider } from '../Components/servicesSlider';
+
+
+
+
+const ServicesPage = () => {
+  return (
+    <>
+      <Section className="topSection flex flex-col items-center justify-center min-h-[200px] sm:min-h-[230px] md:min-h-[280px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[400px]">
+        <Container>
+          <Flex className='row'>
+            <Flex className='col col-xs-12'>
+              <div className='text-center'>
+                <h2 className='font-bold text-4xl sm:text-6xl text-center'>
+                  Our services
+                </h2>
+                <ol>
+                  <li className='display: inline-block'>
+                    <Link href='/' className='font-bold'>Home</Link>
+                    <span>/</span>
+                  </li>
+                  <li className='display: inline-block'>
+                    <span className='font-bold'>Services</span>
+                  </li>
+                </ol>
+              </div>
+            </Flex>
+          </Flex>
+        </Container>
+      </Section>
+      {/* Hero sekcija */}
+      <Section className="py-20 text-center pt-30" style={{ backgroundColor: "#f2f2f2" }}>
+        <h1 className="text-3xl sm:text-4xl font-bold text-blue-900">Naše usluge čišćenja</h1>
+        <p className="text-gray-600 font-bold mt-4 text-lg">Čistoća u koju se možete pouzdati – dom, ured ili auto.</p>
+      </Section>
+
+      {/* Usluge */}
+      <Section className="py-16 bg-gradient-to-b from-white via-gray-50 to-white">
+        <Container>
+          <ServicesIconSlider />
+        </Container>
+      </Section>
+
+      {/* Zašto mi */}
+      <Section className="bg-blue-100 py-16 fade-in">
+        <Container>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-blue-900 mb-10">Zašto izabrati nas?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center">
+            <div className='flex flex-col items-center'>
+              <FaCheckCircle size={40} className="mx-auto text-green-600 mb-2" />
+              <p className='centered-paragraph'>Certificirani profesionalci</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <FaCheckCircle size={40} className="text-green-600 mb-2" />
+              <p className='centered-paragraph'>Ekološka sredstva</p>
+            </div>
+            <div className='flex flex-col items-center'>
+              <FaCheckCircle size={40} className="mx-auto text-green-600 mb-2" />
+              <p className='centered-paragraph'>Fleksibilan raspored</p>
+            </div>
+            <div className='flex flex-col items-center'>
+              <FaCheckCircle size={40} className="mx-auto text-green-600 mb-2" />
+              <p className='centered-paragraph'>100% zadovoljstvo</p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* CTA */}
+      <Section className="bg-blue-400 py-16 text-white text-center fade-in">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Spremni za čisti prostor?</h2>
+        <div className="flex flex-col items-center md:block">
+          <p className="mb-6 text-lg">Kontaktirajte nas već danas i rezervirajte termin za čišćenje.</p>
+          <div className="mt-4">
+            <Link
+              href="/Contact"
+              className="inline-block bg-white text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-blue-900 hover:text-white transition"
+            >
+              Zatraži ponudu
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+    </>
+  );
+};
+
+export default ServicesPage;
